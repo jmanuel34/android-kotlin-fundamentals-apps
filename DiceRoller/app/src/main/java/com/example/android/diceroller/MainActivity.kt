@@ -30,10 +30,11 @@ import java.util.*
  * value between 1 and 6.
  */
 class MainActivity : AppCompatActivity() {
-
+    lateinit var diceImage : ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        diceImage=findViewById(R.id.dice_image)
 
         // Get the Button view from the layout and assign a click
         // listener to it.
@@ -52,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         val resultText: TextView = findViewById(R.id.result_text)
         resultText.text = randomInt.toString()
   */
-        val diceImage: ImageView = findViewById(R.id.dice_image)
+ //       val diceImage: ImageView = findViewById(R.id.dice_image)
         val drawableResource = when (randomInt) {
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2

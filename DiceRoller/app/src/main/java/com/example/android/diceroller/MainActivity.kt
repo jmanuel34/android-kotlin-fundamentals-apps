@@ -41,6 +41,9 @@ class MainActivity : AppCompatActivity() {
         // listener to it.
         val rollButton: Button = findViewById(R.id.roll_button)
         rollButton.setOnClickListener { rollDice() }
+
+        val borrarButton: Button = findViewById(R.id.clear_button)
+        borrarButton.setOnClickListener {borrarButton()}
     }
 
     /**
@@ -51,8 +54,8 @@ class MainActivity : AppCompatActivity() {
         //  Toast.LENGTH_SHORT).show()
         val randomInt = (1..6).random().toInt()
         var randomInt1 = (1..6).random().toInt()
-//        while(randomInt==randomInt1 )
-//            randomInt1=(1..6).random()
+        while(randomInt==randomInt1 )
+            randomInt1=(1..6).random()
         asignarImagen(randomInt, diceImage)
         asignarImagen(randomInt1, diceImage1)
 /*
@@ -73,4 +76,10 @@ class MainActivity : AppCompatActivity() {
         }
         diceImage.setImageResource(drawableResource)
     }
+    private fun borrarButton() {
+        diceImage.setImageResource(R.drawable.empty_dice)
+        diceImage1.setImageResource(R.drawable.empty_dice)
+    }
+
+
 }
